@@ -71,10 +71,10 @@ class ReservationsController < ApplicationController
       'payout_price' => params['payout_price'] || params['expected_payout_amount'],
       'security_price' => params['security_price'] || params['listing_security_price_accurate'],
       'total_price' => params['total_price'] || params['total_paid_amount_accurate'],
-      'adults' => params['adults'] || params['guest_details']['number_of_adults'],
-      'children' => params['children'] || params['guest_details']['number_of_children'],
-      'infants' => params['infants'] || params['guest_details']['number_of_infants'],
-      'description' => description_string(params) || params['guest_details']['localized_description'],
+      'adults' => params['adults'] || params.dig('guest_details', 'number_of_adults'),
+      'children' => params['children'] || params.dig('guest_details', 'number_of_children'),
+      'infants' => params['infants'] || params.dig('guest_details', 'number_of_infants'),
+      'description' => description_string(params) || params.dig('guest_details', 'localized_description'),
     })
   end
 
