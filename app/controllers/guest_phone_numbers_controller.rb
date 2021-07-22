@@ -1,2 +1,0 @@
-class GuestPhoneNumbersController < ApplicationController
-end
