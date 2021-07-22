@@ -6,3 +6,6 @@ Sample pure API made on rails
 
 ### Postman
 I have tested this app using Postman. Included in this repository is a postman collection of the two payloads provided in the spec.
+
+### RSpec
+I have used RSpec for unit testing on this. To see the test results, you can run `rspec` at the root directory.
