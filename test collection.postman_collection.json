@@ -1,0 +1,69 @@
+{
+	"info": {
+		"_postman_id": "c3907785-26ae-445f-b53b-0772dffb6bbd",
+		"name": "test collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Payload 1",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n   \"start_date\":\"2021-03-12\",\n   \"end_date\":\"2021-03-16\",\n   \"nights\":4,\n   \"guests\":4,\n   \"adults\":2,\n   \"children\":2,\n   \"infants\":0,\n   \"status\":\"accepted\",\n   \"guest\":{\n      \"id\":1,\n      \"first_name\":\"Wayne\",\n      \"last_name\":\"Woodbridge\",\n      \"phone\":\"639123456789\",\n      \"email\":\"wayne_woodbridge@bnb.com\"\n   },\n   \"currency\":\"AUD\",\n   \"payout_price\":\"3800.00\",\n   \"security_price\":\"500\",\n   \"total_price\":\"4500.00\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/reservations/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"reservations",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Payload 2",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"reservation\": {\n        \"start_date\": \"2021-03-12\",\n        \"end_date\": \"2021-03-16\",\n        \"expected_payout_amount\": \"3800.00\",\n        \"guest_details\": {\n            \"localized_description\": \"4 guests\",\n            \"number_of_adults\": 2,\n            \"number_of_children\": 2,\n            \"number_of_infants\": 0\n        },\n        \"guest_email\": \"wayne_woodbridge@bnb.com\",\n        \"guest_first_name\": \"Wayne\",\n        \"guest_id\": 1,\n        \"guest_last_name\": \"Woodbridge\",\n        \"guest_phone_numbers\": [\n            \"639123456789\",\n            \"639123456789\"\n        ],\n        \"listing_security_price_accurate\": \"500.00\",\n        \"host_currency\": \"AUD\",\n        \"nights\": 4,\n        \"number_of_guests\": 4,\n        \"status_type\": \"accepted\",\n        \"total_paid_amount_accurate\": \"4500.00\"\n    }\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/reservations/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"reservations",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
