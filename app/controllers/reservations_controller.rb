@@ -6,7 +6,6 @@ class ReservationsController < ApplicationController
   end
 
   def create
-    binding.pry
     guest = Guest.create(guest_attributes)
     @reservation = Reservation.new(reservation_params)
     @reservation.guest = guest
